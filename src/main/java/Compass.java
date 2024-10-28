@@ -13,26 +13,27 @@ public class Compass {
     //The value of currentPoint is defined in the for loop, which uses Point as an input
 
     public Point rotate(Point point, Direction direction) {
-        // rotating right should advance point by 1 through list (North -> East -> South)
+        // rotating right should advance point by 1 through list (North -> East -> South -> West)
+        // rotating right from west -> North (Looping back around)
 
-
-        for (int i = 0; i < Point.values().length - 1; i++) {
-
-//            if (direction == Direction.RIGHT && point == Point.WEST){
-//                return Point.NORTH;
-            if (i  Point.values().length){
-                i = i % Point.values().length;
-            }
-                if (direction == Direction.RIGHT) {
-                currentPoint = Point.values()[i + 1];
-               // System.out.println(currentPoint);
-
-
-            }
-
+        if (direction == Direction.RIGHT && point == Point.NORTH) {
+            return Point.EAST;
         }
-        return currentPoint;
-    }
-}
+            if (direction == Direction.RIGHT && point == Point.EAST) {
+                return Point.SOUTH;
+            }
+                if (direction == Direction.RIGHT && point == Point.SOUTH) {
+                    return Point.WEST;
+                }
+                    if (direction == Direction.RIGHT && point == Point.WEST) {
+                        return Point.NORTH;
+                    }
+
+        return null;
+                    }
+
+                }
+
+
 
 

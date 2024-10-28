@@ -8,6 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class CompassTest {
 
     @Test
+    @DisplayName("Compass can face East when input is NORTH, RIGHT")
     public void compassFacingNorthCanRotateRight() {
         //Arrange
         Compass compass = new Compass();
