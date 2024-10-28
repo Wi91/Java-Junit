@@ -29,8 +29,25 @@ public class Compass {
                         return Point.NORTH;
                     }
 
+        if (direction == Direction.LEFT && point == Point.WEST) {
+            return Point.SOUTH;
+        }
+        if (direction == Direction.LEFT && point == Point.SOUTH) {
+            return Point.EAST;
+        }
+        if (direction == Direction.LEFT && point == Point.EAST) {
+            return Point.NORTH;
+        }
+        if (direction == Direction.LEFT && point == Point.NORTH) {
+            return Point.WEST;
+        }
+
         return null;
                     }
+
+
+
+
 
                 }
 

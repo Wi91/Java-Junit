@@ -30,4 +30,20 @@ assertAll(
         () -> assertEquals(Compass.Point.NORTH, compass.rotate(Compass.Point.WEST, Compass.Direction.RIGHT))
         );
     }
-}
+
+
+
+    @Test
+    @DisplayName("Test direction for all left values")
+        public void compassCanPointToAllLeftDirections(){
+
+        Compass compass = new Compass();
+        assertAll(
+                () -> assertEquals(Compass.Point.WEST, compass.rotate(Compass.Point.NORTH, Compass.Direction.LEFT)),
+                () -> assertEquals(Compass.Point.NORTH, compass.rotate(Compass.Point.EAST, Compass.Direction.LEFT)),
+                () -> assertEquals(Compass.Point.EAST, compass.rotate(Compass.Point.SOUTH, Compass.Direction.LEFT)),
+                () -> assertEquals(Compass.Point.SOUTH, compass.rotate(Compass.Point.WEST, Compass.Direction.LEFT))
+        );
+    }
+
+    }
